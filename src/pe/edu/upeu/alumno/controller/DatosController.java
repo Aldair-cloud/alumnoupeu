@@ -43,7 +43,9 @@ public class DatosController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		PrintWriter out = response.getWriter();
-		int op = Integer.parseInt(request.getParameter("op"));
+		out.println(gson.toJson(datosdao.read()));
+		
+		/*int op = Integer.parseInt(request.getParameter("op"));
 		switch (op) {
 		case 1:
 			datos dato = datosdao.finds(Integer.parseInt(request.getParameter("iddatos")));
@@ -56,13 +58,13 @@ public class DatosController extends HttpServlet {
 		/*case 3:
 			List<escuela> escuelas = escueladao.listarescuelas();
 			out.println(gson.toJson(escuelas));
-			break;*/
+			break;
 		case 3:
 			datos dat = new datos(0, Integer.parseInt(request.getParameter("idescuela")), request.getParameter("nombreescuela"),request.getParameter("apell_nom"), request.getParameter("correo"), request.getParameter("telefono"));
 			break;
 		default:
 			break;
-		}
+		}*/
 		
 		
 	}
@@ -73,7 +75,7 @@ public class DatosController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		PrintWriter out = response.getWriter();
+		/*PrintWriter out = response.getWriter();
 		int op = Integer.parseInt(request.getParameter("op"));
 		switch (op) {
 		case 2:
@@ -87,7 +89,7 @@ public class DatosController extends HttpServlet {
 
 		default:
 			break;
-		}
+		}*/
 	}
 
 }

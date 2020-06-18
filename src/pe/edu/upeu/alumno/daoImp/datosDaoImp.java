@@ -21,12 +21,12 @@ public class datosDaoImp implements datosDao{
 		int x = 0;
 		try {
 			cx = Conexion.getConexion();
-			ps = cx.prepareStatement("INSERT INTO alumno (idalumno, nombreescuela,apellnombres, correo, telefono) VALUES (?, ?, ?, ?, ?);");
-			ps.setInt(1, d.getIddatos());
+			ps = cx.prepareStatement("INSERT INTO alumno (nombreescuela,apellnombres, correo, telefono) VALUES (?, ?, ?, ?)");
+			//ps.setInt(1, d.getIddatos());
+			ps.setString(1, d.getNombreescuela());
 			ps.setString(2, d.getApell_nom());
-			ps.setString(3, d.getNombreescuela());
-			ps.setString(4, d.getCorreo());
-			ps.setString(5, d.getTelefono());
+			ps.setString(3, d.getCorreo());
+			ps.setString(4, d.getTelefono());
 			x = ps.executeUpdate();
 		} catch (Exception e) {
 			System.out.println(e);

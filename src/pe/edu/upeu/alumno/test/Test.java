@@ -22,8 +22,8 @@ public class Test {
 	static datosDao ddao = new datosDaoImp();
 	public static void main(String[] args) {
 		//listaresc();
-		listardat();
-		//create();
+		//listardat();
+		create();
 		//crearescuela();
 		//conexion();
 	}
@@ -54,7 +54,7 @@ public class Test {
 		}
 	}
 	public static void create() {
-		if(ddao.create(new datos(0, 0,"Ingeniera Civil", "Dairus LOl", "daris@gmail", "986472513"))>=1){
+		if(ddao.create(new datos(0, 0, "Darius", "darius@gmail.com", "980762533", "Ingenieria de Sistemas"))>=1){
 			System.out.println("Usuario creado");
 		}else{
 			System.out.println("Error al crear el usuario");
